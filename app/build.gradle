@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        // jar provided in project root folder, in case no access to nexus
+        classpath files('../translation-tool-1.3.4.jar')
+        classpath 'com.google.gdata:core:1.47.1'
+    }
+}
+
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.3"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 24
+        versionCode 1
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        free {
+            applicationId 'translation.tool.sample.free'
+            versionName '1.0-free'
+        }
+        premium {
+            applicationId 'translation.tool.sample.premium'
+            versionName '1.0-premium'
+        }
+    }
+}
+
+apply plugin: 'translationtool'
+translations {
+    spreadsheetId "1xDXS4efBQSPmGzyvG5dw2l2hzpw1PWnqQYLyvZQqfL0"
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile project(":library")
+}
