@@ -21,3 +21,7 @@ Notes:
 - Both the translation plugin and spreadsheetId block should be added below the android block in the build.gradle file.
 - Strings which do not need translations should be kept in the strings.xml file.
 - Import the translations with the updateTranslations gradle task. This must be performed manually. Commit the updated auto-translated-strings.xml files to your repo.
+
+Legal Disclaimer:
+
+- This documentation, including any code shown in it, is licensed under the Apache 2.0 license (terms available at http://www.apache.org/licenses/LICENSE-2.0 and on the link above at "license"). A right to Aplaon's and our Affiliates trademarks and other brand features are not included in the license.
